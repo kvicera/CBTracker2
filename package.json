@@ -10,7 +10,11 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-community/blur": "^3.6.0",
+    "@react-native-community/datetimepicker": "^3.5.2",
     "@react-native-community/masked-view": "^0.1.11",
+    "@react-native-community/netinfo": "^6.0.1",
+    "@react-native-picker/picker": "^1.16.7",
     "@react-navigation/drawer": "^6.1.4",
     "@react-navigation/native": "^6.0.2",
     "react": "17.0.2",
@@ -18,7 +22,8 @@
     "react-native-gesture-handler": "^1.10.3",
     "react-native-reanimated": "^2.3.0-alpha.2",
     "react-native-safe-area-context": "^3.3.0",
-    "react-native-screens": "^3.6.0"
+    "react-native-screens": "^3.6.0",
+    "react-native-ui-lib": "^5.30.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
