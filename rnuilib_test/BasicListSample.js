@@ -4,9 +4,11 @@ import * as Animatable from 'react-native-animatable';
 import {AnimatableManager, Colors, BorderRadiuses, ListItem, Text} from 'react-native-ui-lib';
 import orders, {OrderType} from '../src/data/orders';
 
+import Icon from 'react-native-vector-icons/FontAwesome5';
+// const myIcon = <Icon name="rocket" size={30} color="#900" />;
 
 const renderRow = (row, id) => {
-  const statusColor = row.inventory.status === 'Paid' ? Colors.green30 : Colors.red30;
+  const statusColor = row.inventory.status === 'Stamina Full' ? Colors.green30 : Colors.red30;
   const animationProps = AnimatableManager.presets.fadeInRight;
   const imageAnimationProps = AnimatableManager.getRandomDelay(undefined, undefined);
 
@@ -19,8 +21,11 @@ const renderRow = (row, id) => {
           height={77.5}
           onPress={() => Alert.alert(`pressed on order #${id + 1}`)}
         >
-          <ListItem.Part left>
-            <Animatable.Image source={{uri: row.mediaUrl}} style={styles.image} {...imageAnimationProps} />
+          <ListItem.Part left containerStyle={[styles.border, {paddingLeft: 17, paddingRight: 17}]}>
+            <Animatable.View style={{borderRadius: 25, backgroundColor: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center'}} width={40} height={40}>
+              <Icon name="bolt" size={30} color="grey" />
+            </Animatable.View>
+            {/* <Animatable.Image source={{uri: row.mediaUrl}} style={styles.image} {...imageAnimationProps} /> */}
           </ListItem.Part>
           <ListItem.Part middle column containerStyle={[styles.border, {paddingRight: 17}]}>
             <ListItem.Part containerStyle={{marginBottom: 3}}>
@@ -37,9 +42,10 @@ const renderRow = (row, id) => {
                 text90
                 dark40
                 numberOfLines={1}
-              >{`${row.inventory.quantity} item`}</Text>
+              >{`${row.inventory.quantity} Characters`}</Text>
               <Text text90 color={statusColor} numberOfLines={1}>
                 {row.inventory.status}
+                {/* Full/1hr 30 min until full. */}
               </Text>
             </ListItem.Part>
           </ListItem.Part>
