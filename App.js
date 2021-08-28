@@ -3,13 +3,9 @@ import * as React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
 
-import {Component} from 'react';
-import {View, TextField, Text, Button} from 'react-native-ui-lib';
+import {View, TextField, Button, Text} from 'react-native-ui-lib';
 
-import {StyleSheet, Alert, FlatList} from 'react-native';
-import * as Animatable from 'react-native-animatable';
-import {AnimatableManager, Colors, BorderRadiuses, ListItem, Text} from 'react-native-ui-lib';
-import orders, {OrderType} from '../../data/orders';
+import BasicListSample from './rnuilib_test/BasicListSample'
 
 function HomeScreen({navigation}) {
   return (
@@ -29,15 +25,7 @@ function HomeScreen({navigation}) {
 
 function NotificationsScreen({navigation}) {
   return (
-    <ListItem
-          // @ts-expect-error
-          activeBackgroundColor={Colors.dark60}
-          activeOpacity={0.3}
-          height={77.5}
-          onPress={() => Alert.alert(`pressed on order #${id + 1}`)}
-        >
-
-    </ListItem>
+    <BasicListSample />
   );
 }
 

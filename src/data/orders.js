@@ -1,6 +1,6 @@
 const orders = [
   {
-    name: '#100201',
+    name: '0x03c0...23dC',
     formattedPrice: '$19.99',
     inventory: {
       trackingMethod: 'status',
@@ -121,4 +121,4 @@ const orders = [
   }
 ];
 
-export default orders;
+module.exports = orders
