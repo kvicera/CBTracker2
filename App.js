@@ -22,7 +22,6 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 function AddButtonScreen() {
   return <HomeScreen />;
 }
-
 const Tab = createBottomTabNavigator();
 
 function MyTabs() {
@@ -37,11 +36,11 @@ function MyTabs() {
             iconName = focused ? 'home' : 'home-outline';
           } else if (route.name === 'About') {
             iconName = focused ? 'heart-half' : 'heart-half-outline';
-          } else if (route.name === ' ') {
+          } else if (route.name === 'Add') {
             iconName = 'add-circle';
           }
 
-          if (route.name === ' ') {
+          if (route.name === 'Add') {
             return (
               <View style={styles.middleButton}>
                 <Ionicons name={iconName} size={58} color="#3d76f4" />
@@ -51,19 +50,14 @@ function MyTabs() {
             return <Ionicons name={iconName} size={size} color={color} />;
           }
         },
-        tabBarStyle: {
-          borderTopWidth: 0,
-          shadowColor: '#f7f7f7',
-          height: 60,
-          backgroundColor: '#f7f7f7',
-        },
+        tabBarStyle: styles.bottomBar,
         headerShown: false,
         tabBarActiveTintColor: '#3d76f4',
         tabBarInactiveTintColor: '#677074',
       })}>
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen
-        name=" "
+        name="Add"
         component={AddButtonScreen}
         listeners={{
           tabPress: e => {
@@ -79,9 +73,6 @@ function MyTabs() {
 }
 
 export default function App() {
-  // React.useEffect(() => {
-
-  // }, []);
   return (
     <NavigationContainer>
       <MyTabs />
@@ -90,6 +81,12 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  bottomBar: {
+    borderTopWidth: 0,
+    shadowColor: '#ffffff',
+    height: 60,
+    backgroundColor: '#ffffff',
+  },
   middleButton: {
     position: 'absolute',
     paddingBottom: 3,
